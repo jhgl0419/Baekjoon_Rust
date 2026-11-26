@@ -1,2 +1,3 @@
 # Baekjoon_Rust
-Baekjoon Online Judge, Rust 풀이 및 코드 모음
+## Baekjoon Online Judge, Rust 풀이 및 코드 모음
+Rust로 Ruby를 찍는 그날까지...
