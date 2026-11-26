@@ -1,6 +1,6 @@
 // 5597번: 과제 안 내신 분..?
 // Bronze3
-// 메모리: , 속도: 
+// 메모리: 3244KB, 속도: 2ms
 
 use std::io::{self, Read, Write};
 
