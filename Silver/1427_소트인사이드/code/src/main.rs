@@ -9,7 +9,7 @@ fn main() {
     let mut buf = String::new();
     io::stdin().read_line(&mut buf).unwrap();
 
-    let mut num = buf.trim().chars().collect::<Vec<char>>();
+    let mut num = buf.trim().chars().collect::<Vec<char>>();    // -> buf.trim().as_bytes()로 u8 vec으로 만들어서 비교하는 게 효율적
     num.sort_by(|a, b| b.cmp(a));
 
     writeln!(out, "{}", num.iter().collect::<String>()).unwrap();
