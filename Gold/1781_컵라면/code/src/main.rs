@@ -1,6 +1,6 @@
 // 1781번: 컵라면
 // Gold 2
-// 메모리: 	13504KB, 시간: 22ms
+// 메모리: 	13504KB, 시간: 22m
 
 use std::collections::BinaryHeap;
 use std::io::{self, Read, Write};
@@ -22,21 +22,18 @@ fn main() {
 
     let mut candidate = BinaryHeap::<usize>::new();
 
-    let mut last_i: usize = n-1;
     let mut sum: usize = 0;
     for t in (1..=n).rev() {
-        for i in (0..=last_i).rev() {
-            if dl_n_r[i].0 == t {
-                candidate.push(dl_n_r[i].1);
-                writeln!(out, "cur t: {}, deadline: {}, ramen: {}", t, dl_n_r[i].0, dl_n_r[i].1).unwrap();
+        while let Some(&(dead, ramen)) = dl_n_r.last() {
+            if dead >= t {
+                candidate.push(ramen);
+                dl_n_r.pop();
             } else {
-                last_i = i;
                 break;
             }
         }
 
         if let Some(r) = candidate.pop() {
-            writeln!(out, "cur t: {}, pop: {}", t, r).unwrap();
             sum += r;
         }
     }
